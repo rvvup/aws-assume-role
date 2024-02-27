@@ -1,9 +1,9 @@
 # AWS Assume Role
 
-A simple utility to assume an AWS role. Statically linked, no dependencies.
+A simple utility to assume an AWS role and print the credentials to stdout. Statically linked, no dependencies.
 
 Uses the default AWS credential resolution mechanisms, so should support anything supported by profiles (including SSO,
-MFA etc) as well as environment variables and instance roles.
+MFA etc.) as well as environment variables and instance roles.
 
 # Usage
 

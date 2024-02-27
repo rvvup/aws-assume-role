@@ -13,12 +13,12 @@ import (
 
 const (
 	defaultRoleSessionName = "aws-assume-role"
-	version                = "0.0.1"
 )
 
 var (
 	roleARNArg, externalIDArg, roleSessionNameArg string
 	verboseArg, versionArg                        bool
+	version                                       string
 )
 
 func init() {
