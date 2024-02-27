@@ -25,7 +25,7 @@ export $(aws-assume-role -role-arn arn:aws:iam::123456789:role/role/the-role)
 Use instance roles:
 
 ```sh
-export $(aws-assume-role -role-arn arn:aws:iam::123456789:role/role/the-role)
+export $(AWS_DEFAULT_REGION='eu-west-1' aws-assume-role -role-arn arn:aws:iam::123456789:role/role/the-role)
 ```
 
 Validate and test the assumed role by running a command like `aws sts get-caller-identity`:
