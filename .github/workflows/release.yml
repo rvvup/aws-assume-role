@@ -5,6 +5,10 @@ on:
     tags:
       - '*'
 
+permissions:
+  contents: write
+  discussions: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -34,7 +38,7 @@ jobs:
         mkdir bin
         make build
 
-    - name: Deploy
+    - name: Release
       if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
       uses: softprops/action-gh-release@v1
       with:
@@ -42,5 +46,3 @@ jobs:
           bin/aws-assume-role-linux
           bin/aws-assume-role-osx
           bin/aws-assume-role-osx-arm
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
